@@ -25,20 +25,22 @@ function updateManager(){
     taskmanager.innerHTML = ""
     for(i of tasks){
         const task = document.createElement("div")
+
         task.innerHTML += `Task Name: ${i.name}<br>Priority: ${i.priority}<br>Date: ${i.date}<br>Task Complete?`
+
         const completeTask = document.createElement('input')
         completeTask.type = "checkbox"
         task.appendChild(completeTask)
         completeTask.addEventListener("click", () => {
             task.style = ""
         })
+
         task.innerHTML += `<br>`
         const deleteTask = document.createElement('button')
         deleteTask.innerHTML =  `Delete Task`
         task.appendChild(deleteTask)
         deleteTask.addEventListener("click", () => {
             i.isCompleted = true
-            console.log
         })
         
 
