@@ -10,7 +10,7 @@ document.getElementById('submit').addEventListener("click", () => {
         id: 1,
         name: document.getElementById('taskName').value,
         priority: document.getElementById('taskPriority').value,
-        isImportant: document.getElementById('taskImportance').value,
+        isImportant: document.getElementById('taskImportance').checked,
         isCompleted: false,
         date: "date",
     }
@@ -31,9 +31,7 @@ function updateManager(){
         const completeTask = document.createElement('input')
         completeTask.type = "checkbox"
         task.appendChild(completeTask)
-        completeTask.addEventListener("click", () => {
-            task.style = ""
-        })
+        i.isCompleted = completeTask.checked
 
         task.innerHTML += `<br>`
         const deleteTask = document.createElement('button')
