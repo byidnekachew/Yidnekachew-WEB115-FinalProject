@@ -16,6 +16,7 @@ document.getElementById('submit').addEventListener("click", () => {
     }
 
     tasks.push(temp)
+    console.log(JSON.stringify(temp))
 
     updateManager()
 })
@@ -24,19 +25,32 @@ function updateManager(){
     taskmanager.innerHTML = ""
     for(i of tasks){
         const task = document.createElement("div")
-        task.innerHTML += `Task Name: ${i.name}<br>Priority: ${i.priority}<br>Date: ${i.date}<br>`
+        task.innerHTML += `Task Name: ${i.name}<br>Priority: ${i.priority}<br>Date: ${i.date}<br>Task Complete?`
+        const completeTask = document.createElement('input')
+        completeTask.type = "checkbox"
+        task.appendChild(completeTask)
+        completeTask.addEventListener("click", () => {
+            task.style = ""
+        })
+        task.innerHTML += `<br>`
         const deleteTask = document.createElement('button')
         deleteTask.innerHTML =  `Delete Task`
         task.appendChild(deleteTask)
         deleteTask.addEventListener("click", () => {
-            for (j of task){
-                if (i.id == j.id){
-                    updateManager()
-                    console.log('Worked')
-                }
-            }
+            i.isCompleted = true
+            console.log
         })
-        task.innerHTML += `<br><br><br>`
+        
+
+        if(i.isImportant){
+            task.style = ""
+        }
+        if(i.isCompleted){
+
+        }
+
+        task.innerHTML += `<br><br><br>----------------------<br><br>`
         taskmanager.appendChild(task)
     }
 }
+
