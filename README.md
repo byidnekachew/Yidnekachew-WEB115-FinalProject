@@ -1,1 +1,7 @@
 # Yidnekachew-WEB115-FinalProject
+
+When completing this project, I hoped to make my code as dynamic as possible in order to make the updating of the taskmanager div as simple as possible. I started off by creating the “skeleton” of the website by coding the general layout in HTML. This was a simple but versatile HTML document with two divs to contain the form and dynamic display sections. Next, I started my JavaScript file by creating some important variables in order to prepare for the functions and event listeners later in the code. These general variables were then manipulated throughout the code.
+
+I created a single function to do the majority of the work. This updateManager function was responsible for iterating through one of my general variables, the array that stored the objects aligned with each task, and displaying each task on the page. By doing this, I was able to dynamically add everything I needed. 
+
+I primarily struggled with changing the tasks following their creation. I couldn’t figure out how to get tasks to delete or appear with strikethrough once they were already added to the page. I tried to do this for deletion by calling the update manager function again however there seemed to be an issue with the event listener. This same problem likely caused my issues with the strikethrough.
